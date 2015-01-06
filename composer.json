@@ -1,0 +1,27 @@
+{
+    "name": "innesm4/laravel-sharpspring",
+    "license": "MIT",
+    "description": "Laravel Package to use the Sharpspring API",
+    "keywords":
+        [
+            "sharpspring",
+            "reports",
+            "laravel"
+        ],
+    "authors": [
+        {
+            "name": "Mark Innes",
+            "email": "innesm4@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Innesm4\\LaravelSharpspring\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
