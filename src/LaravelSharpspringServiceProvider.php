@@ -1,7 +1,6 @@
 <?php namespace Innesm4\LaravelSharpspring;
 
 use Illuminate\Support\ServiceProvider;
-use Config;
 
 class LaravelSharpspringServiceProvider extends ServiceProvider {
 
@@ -10,7 +9,7 @@ class LaravelSharpspringServiceProvider extends ServiceProvider {
      *
      * @var bool
      */
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * Bootstrap the application events.
@@ -20,7 +19,7 @@ class LaravelSharpspringServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->package('innesm4/laravel-sharpspring');
-    }
+    } 
     /**
      * Register the service provider.
      *
@@ -28,14 +27,15 @@ class LaravelSharpspringServiceProvider extends ServiceProvider {
      */
     public function register()
     {
+        $this->app->bind('Innesm4\LaravelSharpspring\LaravelSharpspring', function($app){
 
-        $this->app->bindShared('laravel-sharpspring', function($app)
-        {
-            $client = $app->make('sharpspring');
+            $this->app['config']->package('innesm4/laravel-sharpspring', 'Innesm4\LaravelSharpspring\LaravelSharpspring');
 
-            $sharpspringApi = new LaravelSharpspring($app['config']->get('laravelSharpspring.accountID'), $app['config']->get('laravelSharpspring.secretKey'));
-            return $sharpspringApi;
+            return new LaravelSharpspring($app['config']->get('laravel-sharpspring::accountID'), $app['config']->get('laravel-sharpspring::secretKey'));
         });
+
+        $this->app->singleton('laravel-sharpspring', 'Innesm4\LaravelSharpspring\LaravelSharpspring');
+
     }
 
     /**
