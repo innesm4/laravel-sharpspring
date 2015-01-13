@@ -64,34 +64,34 @@ When the installation is done you can easily retrieve Sharpspring API data. The 
 ### Leads
 
 ```
-LaravelSharpspring::getLeads();
+LaravelSharpspring::getLeads($limit, $offset);
 LaravelSharpspring::getLeadsDateRange('2015-01-01', '2015-01-19');
 ```   
 
 ### Opportunities
 
 ```
-LaravelSharpspring::getOpportunities();
+LaravelSharpspring::getOpportunities($limit, $offset);
 LaravelSharpspring::getOpportunitiesDateRange('2015-01-01', '2015-01-19');
 ```   
 
 ### OpportunityLeads
 
 ```
-LaravelSharpspring::getOpportunityLeads();
+LaravelSharpspring::getOpportunityLeads($limit, $offset);
 LaravelSharpspring::getOpportunityLeadsDateRange('2015-01-01', '2015-01-19');
 ```   
 
 ### getAccounts
 
 ```
-LaravelSharpspring::getAccounts(); 
+LaravelSharpspring::getAccounts($limit, $offset); 
 LaravelSharpspring::getAccountsDateRange('2015-01-01', '2015-01-19');
 ```   
 
 ### getCampaigns
 
 ```
-LaravelSharpspring::getCampaigns();
+LaravelSharpspring::getCampaigns($limit, $offset);
 LaravelSharpspring::getCampaignsDateRange('2015-01-01', '2015-01-19')
 ```   
