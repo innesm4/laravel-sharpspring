@@ -77,6 +77,10 @@ class LaravelSharpspring {
 
        $getLeads = $this->runQuery($data);    
 
+       if ($getLeads->error){
+          return Response::json($getLeads->error);
+       }
+
        return Response::json($getLeads->result);      
         
     }
@@ -101,7 +105,11 @@ class LaravelSharpspring {
          'id' => $requestID                                                                     
       );                                                                                          
 
-      $getLeadsDateRange = $this->runQuery($data);  
+      $getLeadsDateRange = $this->runQuery($data);
+
+      if ($getLeadsDateRange->error){
+          return Response::json($getLeadsDateRange->error);
+      }  
 
       return Response::json($getLeadsDateRange->result);   
 
@@ -124,7 +132,11 @@ class LaravelSharpspring {
            'id' => $requestID                                                                     
        );                                                                                          
 
-       $getOpportunities = $this->runQuery($data);    
+       $getOpportunities = $this->runQuery($data);  
+
+       if ($getOpportunities->error){
+          return Response::json($getOpportunities->error);
+       }    
 
        return Response::json($getOpportunities->result);      
         
@@ -150,7 +162,11 @@ class LaravelSharpspring {
          'id' => $requestID                                                                     
       );                                                                                          
 
-      $getOpportunitiesDateRange = $this->runQuery($data);  
+      $getOpportunitiesDateRange = $this->runQuery($data); 
+      
+      if ($getOpportunitiesDateRange->error){
+          return Response::json($getOpportunitiesDateRange->error);
+      }  
 
       return Response::json($getOpportunitiesDateRange->result);  
     }
@@ -172,7 +188,11 @@ class LaravelSharpspring {
            'id' => $requestID                                                                     
        );                                                                                          
 
-       $getOpportunityLeads = $this->runQuery($data);    
+       $getOpportunityLeads = $this->runQuery($data);  
+
+       if ($getOpportunityLeads->error){
+          return Response::json($getOpportunityLeads->error);
+       }   
 
        return Response::json($getOpportunityLeads->result);      
         
@@ -198,7 +218,11 @@ class LaravelSharpspring {
          'id' => $requestID                                                                     
       );                                                                                          
 
-      $getOpportunityLeadsDateRange = $this->runQuery($data);  
+      $getOpportunityLeadsDateRange = $this->runQuery($data); 
+
+      if ($getOpportunityLeadsDateRange->error){
+          return Response::json($getOpportunityLeadsDateRange->error);
+      } 
 
       return Response::json($getOpportunityLeadsDateRange->result);  
     }
@@ -220,7 +244,11 @@ class LaravelSharpspring {
            'id' => $requestID                                                                     
        );                                                                                          
 
-       $getAccounts = $this->runQuery($data);    
+       $getAccounts = $this->runQuery($data);  
+
+        if ($getAccounts->error){
+          return Response::json($getAccounts->error);
+        } 
 
        return Response::json($getAccounts->result);   
     }
@@ -245,7 +273,11 @@ class LaravelSharpspring {
          'id' => $requestID                                                                     
       );                                                                                          
 
-      $getAccountsDateRange = $this->runQuery($data);  
+      $getAccountsDateRange = $this->runQuery($data); 
+
+      if ($getAccountsDateRange->error){
+          return Response::json($getAccountsDateRange->error);
+      }  
 
       return Response::json($getAccountsDateRange->result);  
     }
@@ -267,7 +299,11 @@ class LaravelSharpspring {
            'id' => $requestID                                                                     
        );                                                                                          
 
-       $getCampaigns = $this->runQuery($data);    
+       $getCampaigns = $this->runQuery($data);
+
+       if ($getCampaigns->error){
+          return Response::json($getCampaigns->error);
+       }     
 
        return Response::json($getCampaigns->result);   
     }
@@ -292,7 +328,11 @@ class LaravelSharpspring {
          'id' => $requestID                                                                     
       );                                                                                          
 
-      $getCampaignsDateRange = $this->runQuery($data);  
+      $getCampaignsDateRange = $this->runQuery($data);
+
+      if ($getCampaignsDateRange->error){
+          return Response::json($getCampaignsDateRange->error);
+      }   
 
       return Response::json($getCampaignsDateRange->result);  
     }
