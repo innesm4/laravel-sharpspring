@@ -1,9 +1,8 @@
-Laravel Sharpspring
+Laravel 4 Sharpspring
 ===================
 
 ## Installation
-
-This package can be installed through Composer.
+For use with Laravel 4. This package can be installed through Composer.
 
 ```
 {
